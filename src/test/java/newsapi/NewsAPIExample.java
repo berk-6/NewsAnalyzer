@@ -6,11 +6,14 @@ import newsapi.enums.Category;
 import newsapi.enums.Country;
 import newsapi.enums.Endpoint;
 
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class NewsAPIExample {
 
-    public static final String APIKEY = "myAPIKey";
+    public static final String APIKEY = "c3eab09b0d924cfcb717b83c823b8671";
 
     public static void main(String[] args){
 
@@ -27,12 +30,11 @@ public class NewsAPIExample {
                 List<Article> articles = newsResponse.getArticles();
                 articles.stream().forEach(article -> System.out.println(article.toString()));
             }
-
         newsApi = new NewsApiBuilder()
                 .setApiKey(APIKEY)
                 .setQ("corona")
                 .setEndPoint(Endpoint.EVERYTHING)
-                .setFrom("2020-03-20")
+                .setFrom("2022-04-25")
                 .setExcludeDomains("Lifehacker.com")
                 .createNewsApi();
 

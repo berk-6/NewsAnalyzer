@@ -111,7 +111,7 @@ public class NewsApi {
         try {
             obj = new URL(url);
         } catch (MalformedURLException e) {
-            // TOOO improve ErrorHandling
+            System.out.println("the requested "+ url + "is malformed!");
             e.printStackTrace();
         }
         HttpURLConnection con;
@@ -125,8 +125,8 @@ public class NewsApi {
             }
             in.close();
         } catch (IOException e) {
-            // TOOO improve ErrorHandling
             System.out.println("Error "+e.getMessage());
+            e.printStackTrace();
         }
         return response.toString();
     }
@@ -185,9 +185,9 @@ public class NewsApi {
                 }
             } catch (JsonProcessingException e) {
                 System.out.println("Error: "+e.getMessage());
+                e.printStackTrace();
             }
         }
-        //TODO improve Errorhandling
         return newsReponse;
     }
 }
